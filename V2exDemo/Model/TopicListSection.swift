@@ -9,5 +9,12 @@
 import Foundation
 
 struct TopicListSection {
+    var header:String
+    var topics:[Topic]
 
+    init(header:String, topics:[Topic]) {
+        self.header = header
+        self.topics = topics
+    }
+    
 }

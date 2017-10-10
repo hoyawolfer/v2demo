@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
+  - Kanna (2.2.1)
   - Moya (9.0.0):
     - Moya/Core (= 9.0.0)
   - Moya/Core (9.0.0):
@@ -10,17 +11,19 @@ PODS:
   - SVProgressHUD (2.2.1)
 
 DEPENDENCIES:
+  - Kanna
   - Moya (~> 9.0.0)
   - RxSwift (~> 4.0.0-beta.0)
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
   Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxSwift: e0899fae37065c16db976cc5e3c957e4e388869c
   SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
 
-PODFILE CHECKSUM: 16ec3579f1b044c26692b87d93fdb9b0cd3d57d0
+PODFILE CHECKSUM: 4ef9fd183a0f9e727161a36c0ecf80e02a94c62d
 
 COCOAPODS: 1.2.1

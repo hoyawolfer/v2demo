@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Ji
+import Kanna
 
 struct HTMLParser {
     static let shared = HTMLParser()
@@ -16,8 +16,8 @@ struct HTMLParser {
 
     }
 
-    func HomeModel(data:Data) -> <#return type#> {
-        <#function body#>
+    func HomeModel(data:Data) -> [Topic] {
+
     }
 
 
