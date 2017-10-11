@@ -10,12 +10,12 @@ import Foundation
 
 struct User {
     var name:String = ""
-    var herf:String = ""
+    var href:String = ""
     var src:String = ""
 
-    init(name:String, herf:String, src:String) {
+    init(name:String, href:String, src:String) {
         self.name = name
-        self.herf = herf
+        self.href = href
         self.src = src
     }
 }
@@ -25,34 +25,23 @@ struct Topic {
 
     var title:String = ""
     var content:String = ""
-    var herf:String = ""
+    var href:String = ""
     var ower:User?
     var node:Node?
 
     var lastReplyTime:String = ""
     var lastReplyUser:User?
-    var replyCount:Stirng = "0"
+    var replyCount:String = "0"
     var creatTime:String = ""
     var token:String = ""
     var isFavorite:Bool = false
     var isThank:Bool = false
 
-    init(title:String,
-         content:String,
-         herf:String,
-         ower:User,
-         node:Node,
-         lastReplyTime:String,
-         lastReplyUser:User,
-         replyCount:Stirng,
-         creatTime:String,
-         token:String,
-         isFavorite:Bool,
-         isThank:Bool) {
+    init(title: String = "", content: String = "", href: String = "", owner: User? = nil, node: Node? = nil, lastReplyTime: String = "", lastReplyUser: User? = nil, replyCount: String = "0", creatTime: String = "", token: String = "", isFavorite: Bool = false, isThank: Bool = false) {
 
         self.title = title
         self.content = content
-        self.herf = herf
+        self.href = href
         self.ower = ower
         self.node = node
         self.lastReplyTime = lastReplyTime

@@ -20,7 +20,9 @@ class HomeViewModel {
     var nodeHerf:String = ""
     private let dispostBag = DisposeBag()
 
-    func fetchTopics() -> Observable<Bool> {
-        return API.provider.rxRequest(API.topics(nodeHerf: nodeHerf)).sub
+    func fetchTopics() -> Variable<Bool>{
+        return API.provider.rxRequest(API.topics(nodeHerf: nodeHerf)).flatMap({ (response) -> PrimitiveSequence<SingleTrait, R> in
+            
+        })
     }
 }
