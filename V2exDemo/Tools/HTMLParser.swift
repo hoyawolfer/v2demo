@@ -45,7 +45,65 @@ struct HTMLParser {
     }
 
     func topicDetails(html data:Data) -> (topic:Topic, currentPage:Int, countTime:String, comments:[Comment])? {
-
+        
+        guard let html = try? HTML(html: data, encoding: String.Encoding.utf8) else {
+            return nil
+        }
+        
+        let tokenPath = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][1]/div[@class='inner']/div[@class='fr']/a[@class='op'][1]")
+        let token = tokenPath.first?["herf"]?.components(separatedBy: "?t=").last ?? ""
+        let isFavorite = tokenPath.first?["herf"]?.contains("unfavorite") ?? false
+        let thankPath = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][1]/div[@class='inner']/div[@class='fr']/div[@id='topic_thank']")
+        let isThank = thankPath.first?.content?.contains("感谢已发送") ?? false
+        
+        let creatTimePath = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][1]/div[@class='header']/small[@class='gray']")
+        let creatTimeString = creatTimePath.first?.content ?? ""
+        let creatTime = creatTimeString.components(separatedBy: " at ").last ?? ""
+        let contentPath = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][1]/div[@class='cell']/div[@class='topic_content']")
+        let subtlePath = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][1]/div[@class='subtle']")
+        let subtle = subtlePath.flatMap({$0.toHTML}).joined(separator: "")
+        let content = (contentPath.first?.toHTML ?? "") + subtle
+        let replyTimePath = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][2]/div[@class='cell'][1]")
+        let countTime = (replyTimePath.first?.content ?? "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let pagePath = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][2]/div[starts-with(@class,'inner')]/*[contains(@class,'page_current')]")
+        var currentPage = 1
+        if let page = pagePath.first?.content {
+            currentPage = Int(page) ?? 1
+        }
+        var owner:User?
+        let headerPath = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][1]/div[@class='header']")
+        if let ownerHref = headerPath.first?.xpath("./div[@class='fr']/a").first?["href"] {
+            let ownerSrc = headerPath.first?.xpath("./div[@class='fr']/a/img").first?["href"]
+            let ownerName = headerPath.first?.xpath("./small[@class='gray']/a").first?.content {
+                owner = User(name: ownerName, href: ownerHref, src: ownerSrc)
+            }
+        }
+        
+        var node:Node?
+        if let nodeName = headerPath.first?.xpath("./a[2]").first?.content,
+            let nodeHref = headerPath.first?.xpath("./a[2]").first?["href"]{
+            node = Node(name: nodeName, href: nodeHref)
+        }
+        let title = headerPath.first?.xpath("./h1").first?.content ?? ""
+        let replyContentPath = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][2]/div[contains(@id,'r_')]")
+        let comments = replyContentPath.flatMap({e -> Comment in
+            if let src = e.xpath("./table/tr/td[1]/img").first?["src"],
+                let userHref = e.xpath("./table/tr/td[3]/strong/a").first?["href"],
+                let userName = e.xpath("./table/tr/td[3]/strong/a").first?.content,
+                let time = e.xpath("./table/tr/td[3]/span[1]").first?.content,
+                let text = e.xpath("./table/tr/td[3]/div[@class='reply_content']").first?.toHTML {
+                
+                let thanks = e.xpath("./table/tr/td[3]/span[2]").first?.content ?? "0"
+                let number = e.xpath("./table/tr/td[3]/div[@class='fr']/span[@class='no']").first?.content "0"
+                let user = User(name: userName, href: userHref, src: src)
+                let replyId = e["id"]?.replacingOccurrences(of: "r_", with: "") ?? ""
+                var replyContent = repl
+                
+            }
+            
+        })
+        
+        
     }
 
     func homeNodes(html data:Data) -> [Node] {
