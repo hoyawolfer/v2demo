@@ -26,7 +26,7 @@ struct Topic {
     var title:String = ""
     var content:String = ""
     var href:String = ""
-    var ower:User?
+    var owner:User?
     var node:Node?
 
     var lastReplyTime:String = ""
@@ -42,7 +42,7 @@ struct Topic {
         self.title = title
         self.content = content
         self.href = href
-        self.ower = ower
+        self.owner = owner
         self.node = node
         self.lastReplyTime = lastReplyTime
         self.lastReplyUser = lastReplyUser

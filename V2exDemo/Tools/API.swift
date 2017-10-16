@@ -18,8 +18,12 @@ enum API {
     case once()
     // 登录
     case login(userNameKey:String, passwordKey:String, userName:String, password:String, once:String)
+    //注销
+    case logout(once:String)
     // Topics
     case topics(nodeHerf:String)
+
+    case dailyRewards(once:String)
 }
 
 extension API:TargetType {

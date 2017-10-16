@@ -15,6 +15,75 @@ struct HTMLParser {
     private init() {
 
     }
+    //凭证
+    func once(html data:Data) -> String? {
+        guard let html = try? HTML(html: data, encoding: String.Encoding.utf8) else {
+            return nil
+        }
+
+        if let onceElement = html.css("input").first(where: {$0["name"] == "once"}) {
+            if let value = onceElement["value"] {
+                return value
+            }
+        }
+        return nil
+    }
+    //节点导航
+    func nodesNavigation(html data:Data) -> [(name:String, content:String)] {
+        guard let html = try? HTML(html: data, encoding: String.Encoding.utf8) else {
+            return []
+        }
+        let path = html.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][last()]/div[position()>1]")
+        let items = path.flatMap { e -> (name:String, content:String)? in
+            if let name = e.xpath("./table/tr/td[1]/span").first?.content,
+                let content = e.xpath("./table/tr/td[2]").first?.innerHTML {
+                return (name, content)
+            }
+            return nil
+        }
+        return items
+    }
+
+    func topicDetails(html data:Data) -> (topic:Topic, currentPage:Int, countTime:String, comments:[Comment])? {
+
+    }
+
+    func homeNodes(html data:Data) -> [Node] {
+        let html = try? HTML(html: data, encoding: .utf8)
+
+        var nodePath = html?.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][1]/div[@class='cell'][1]/a")
+        let infoPath = html?.xpath("//body/div[@id='Top']/div[@class='content']//table/tr/td[3]/a[1]")
+        if let nameHref = infoPath.first?["href"], nameHref.hasPrefix("/member/") {
+            if let title = html?.xpath("//head/title").first?.content, title.contains("两步验证登录") {
+//                Account.shared.logout()
+                return []
+            }
+            //已经登录
+            let username = nameHref.replacingOccurrences(of: "/member/", with: "")
+            let src = infoPath.first?.xpath("./img").first?["src"] ?? ""
+//            Account.shared.user.value = User(name: username, href: nameHref, src: src)
+//            Account.shared.isLoggedIn.value = true
+
+            let dailyPath = html?.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][1]/div[@class='inner']/a")
+            if let href = dailyPath.first?["href"], href == "/mission/daily" {
+                //领取今日的登录奖励
+                Account.shared.isDailyRewards.value = true
+                nodePath = html?.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][2]/div[@class='cell'][2]/a")
+            }else {
+                Account.shared.isDailyRewards.value = false
+                nodePath = html?.xpath("//body/div[@id='Wrapper']/div[@class='content']/div[@class='box'][1]/div[@class='cell'][2]/a")
+            }
+        }
+
+        let nodes = nodePath.flatMap({e -> Node? in
+            if let href = e["href"], let name = e.content, let className = e.className {
+                return Node(name: name, href: href, isCurrent: className.hasSuffix("current"))
+            }
+            return nil
+        })
+        return nodes
+
+    }
 
     func HomeModel(data:Data) -> [Topic] {
 

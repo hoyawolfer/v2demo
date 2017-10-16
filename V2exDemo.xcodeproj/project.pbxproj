@@ -25,6 +25,9 @@
 		B0AB46181F7F93D000CF7E97 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB46171F7F93D000CF7E97 /* Node.swift */; };
 		B0FB82E01F8CA82700C87B51 /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB82DF1F8CA82400C87B51 /* HTMLParser.swift */; };
 		B0FB82E21F8CA83100C87B51 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB82E11F8CA83100C87B51 /* Topic.swift */; };
+		B0FB82E41F945F0100C87B51 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB82E31F945F0100C87B51 /* Account.swift */; };
+		B0FB82E61F948ADD00C87B51 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB82E51F948ADD00C87B51 /* Error.swift */; };
+		B0FB82E81F94B8F100C87B51 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB82E71F94B8F100C87B51 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		B0AB46171F7F93D000CF7E97 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		B0FB82DF1F8CA82400C87B51 /* HTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
 		B0FB82E11F8CA83100C87B51 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		B0FB82E31F945F0100C87B51 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		B0FB82E51F948ADD00C87B51 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		B0FB82E71F94B8F100C87B51 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		C0CEA21DFFE63DFFBCF014D7 /* Pods-V2exDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2exDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-V2exDemo/Pods-V2exDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D8491BA130FB142134CA1FD8 /* Pods-V2exDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2exDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-V2exDemo/Pods-V2exDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +190,8 @@
 		B0AB45FF1F7F4A7A00CF7E97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B0FB82E31F945F0100C87B51 /* Account.swift */,
+				B0FB82E51F948ADD00C87B51 /* Error.swift */,
 				B0AB46151F7F93C500CF7E97 /* TopicListSection.swift */,
 				B0AB46171F7F93D000CF7E97 /* Node.swift */,
 				B0FB82E11F8CA83100C87B51 /* Topic.swift */,
@@ -220,6 +228,7 @@
 			children = (
 				B0AB46081F7F6A2C00CF7E97 /* API.swift */,
 				B0FB82DF1F8CA82400C87B51 /* HTMLParser.swift */,
+				B0FB82E71F94B8F100C87B51 /* Comment.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -383,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		74416ED85DBDC4C5F133BD29 /* [CP] Embed Pods Frameworks */ = {
@@ -437,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FB82E01F8CA82700C87B51 /* HTMLParser.swift in Sources */,
+				B0FB82E41F945F0100C87B51 /* Account.swift in Sources */,
 				B0FB82E21F8CA83100C87B51 /* Topic.swift in Sources */,
 				B0AB460E1F7F7FCF00CF7E97 /* Observable+Response.swift in Sources */,
 				B0AB46181F7F93D000CF7E97 /* Node.swift in Sources */,
@@ -445,8 +455,10 @@
 				B0AB46141F7F924E00CF7E97 /* HomeViewModel.swift in Sources */,
 				B0AB46161F7F93C500CF7E97 /* TopicListSection.swift in Sources */,
 				B0AB46121F7F861A00CF7E97 /* Single+Response.swift in Sources */,
+				B0FB82E81F94B8F100C87B51 /* Comment.swift in Sources */,
 				B0AB460C1F7F7F8000CF7E97 /* RxMoyaAvailability.swift in Sources */,
 				B0AB46101F7F858C00CF7E97 /* MoyaProvider+Rx.swift in Sources */,
+				B0FB82E61F948ADD00C87B51 /* Error.swift in Sources */,
 				B0AB46041F7F4A7B00CF7E97 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

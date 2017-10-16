@@ -20,9 +20,19 @@ class HomeViewModel {
     var nodeHerf:String = ""
     private let dispostBag = DisposeBag()
 
-    func fetchTopics() -> Variable<Bool>{
-        return API.provider.rxRequest(API.topics(nodeHerf: nodeHerf)).flatMap({ (response) -> PrimitiveSequence<SingleTrait, R> in
-            
-        })
+    func fetchTopics() -> Observable<Bool>{
+        return API.provider.rxRequest(API.topics(nodeHerf: nodeHerf)).asObservable().flatMapLatest({ response -> Observable<Bool> in
+            if self.defaultNodes.value.isEmpty {
+                let nodes = HTMLParser.shared.homeNodes(html: response.data)
+                self.defaultNodes.value = nodes
+            }
+            if self.nodesNavigation.isEmpty {
+                let navigation = HTMLParser.shared.nodesNavigation(html: response.data)
+                self.nodesNavigation = navigation
+            }
+
+            let topics = HTMLParser.shared.home
+
+        }).share(replay: 1, scope: SubjectLifetimeScope.forever).observeOn(MainScheduler.instance)
     }
 }
