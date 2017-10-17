@@ -12,7 +12,7 @@ import Moya
 import Kanna
 
 struct Account {
-    let isDaultRewards = Variable<Bool>(false)
+    let isDailyRewards = Variable<Bool>(false)
     let unreadCount = Variable<Int>(0)
 
     let user = Variable<User?>(nil)
@@ -21,6 +21,7 @@ struct Account {
 //    var privacy:
     private let disposeBag = DisposeBag()
 
+    static var shared = Account()
     private init() {
 
     }

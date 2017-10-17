@@ -55,6 +55,14 @@ struct Topic {
 
 }
 
+extension Topic {
+    var id:String {
+        if href.contains("#") {
+            return href.components(separatedBy: "#").first?.replacingOccurrences(of: "/t/", with: "") ?? ""
+        }
+        return href.replacingOccurrences(of: "/t/", with: "")
+    }
+}
 
 
 

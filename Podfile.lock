@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
+  - Differentiator (3.0.0-rc.0)
   - Kanna (2.2.1)
   - Moya (9.0.0):
     - Moya/Core (= 9.0.0)
@@ -7,23 +8,34 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - Result (3.2.4)
+  - RxCocoa (4.0.0-rc.0):
+    - RxSwift (~> 4.0.0-rc.0)
+  - RxDataSources (3.0.0-rc.0):
+    - Differentiator (~> 3.0.0-rc.0)
+    - RxCocoa (~> 4.0.0-rc.0)
+    - RxSwift (~> 4.0.0-rc.0)
   - RxSwift (4.0.0-rc.0)
   - SVProgressHUD (2.2.1)
 
 DEPENDENCIES:
   - Kanna
   - Moya (~> 9.0.0)
+  - RxCocoa (~> 4.0.0-rc.0)
+  - RxDataSources (~> 3.0.0-rc.0)
   - RxSwift (~> 4.0.0-beta.0)
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Differentiator: 1e7575c5613fc4e72659d9d2d0867ff5bc4dbac5
   Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
   Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxCocoa: 62457355be73369670fbdf053a79a491552b64ed
+  RxDataSources: db58285ada7c9a6d97e93643acc16a8e0c4ff669
   RxSwift: 1dd09ceb11531c39adff4efe23556b1484e16967
   SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
 
-PODFILE CHECKSUM: 4ef9fd183a0f9e727161a36c0ecf80e02a94c62d
+PODFILE CHECKSUM: f1e4bcf48105356042f8205ec2aeb8119f5447aa
 
 COCOAPODS: 1.2.1
