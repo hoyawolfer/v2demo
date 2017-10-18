@@ -31,6 +31,7 @@
 		B0FB82EC1F95DDE100C87B51 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB82EB1F95DDE100C87B51 /* HomeViewController.swift */; };
 		B0FB82F41F96061100C87B51 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB82F31F96061100C87B51 /* Theme.swift */; };
 		B0FB82F61F96066C00C87B51 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB82F51F96066C00C87B51 /* AppStyle.swift */; };
+		B0FB82F81F96F5D000C87B51 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB82F71F96F5CF00C87B51 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		B0FB82EB1F95DDE100C87B51 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B0FB82F31F96061100C87B51 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		B0FB82F51F96066C00C87B51 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		B0FB82F71F96F5CF00C87B51 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		C0CEA21DFFE63DFFBCF014D7 /* Pods-V2exDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2exDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-V2exDemo/Pods-V2exDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D8491BA130FB142134CA1FD8 /* Pods-V2exDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2exDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-V2exDemo/Pods-V2exDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +240,7 @@
 				B0FB82E71F94B8F100C87B51 /* Comment.swift */,
 				B0FB82F31F96061100C87B51 /* Theme.swift */,
 				B0FB82F51F96066C00C87B51 /* AppStyle.swift */,
+				B0FB82F71F96F5CF00C87B51 /* ActivityIndicator.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			files = (
 				B0FB82E01F8CA82700C87B51 /* HTMLParser.swift in Sources */,
 				B0FB82E41F945F0100C87B51 /* Account.swift in Sources */,
+				B0FB82F81F96F5D000C87B51 /* ActivityIndicator.swift in Sources */,
 				B0FB82E21F8CA83100C87B51 /* Topic.swift in Sources */,
 				B0AB460E1F7F7FCF00CF7E97 /* Observable+Response.swift in Sources */,
 				B0AB46181F7F93D000CF7E97 /* Node.swift in Sources */,

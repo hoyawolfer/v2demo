@@ -22,5 +22,38 @@ class HomeViewController:UITableViewController {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
 
+        AppStyle.shared.themeUpdateVariable.asObservable().subscribe(onNext: {update in
+
+        }).disposed(by: disposebag)
+
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 90
+        tableView.delegate = nil
+        tableView.dataSource = nil
+
+        refreshControl = UIRefreshControl()
+        refreshControl?.rx.controlEvent(UIControlEvents.valueChanged).flatMapLatest({[unowned viewModel]_ in
+            viewModel.fetchTopics()
+        }).share(replay: 1, scope: SubjectLifetimeScope.whileConnected)
+            .subscribe(onNext: {isEmpty in
+            }, onError: {error in
+                print("error:",error)
+            })
+            .disposed(by: disposebag)
+        viewModel.loadingActivityIndicator.asObservable().bind(to: refreshControl!.rx.isRefreshing).disposed(by: disposebag)
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
