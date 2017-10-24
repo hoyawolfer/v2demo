@@ -35,8 +35,33 @@ struct AppStyle {
     private init() {
         if let stylePath = Bundle.main.path(forResource: "style", ofType: "css") {
             do {
-                self.css = try String
+                self.css = try String(contentsOfFile: stylePath, encoding: String.Encoding.utf8)
+            } catch {
+
             }
         }
     }
+
+    func setupBarStyle(_ navigationBar:UINavigationBar = UINavigationBar.appearance()) {
+        navigationBar.isTranslucent = false
+        navigationBar.tintColor = theme.tintColor
+        navigationBar.barTintColor = theme.barTintColor
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:theme.navigationBarTitleColor, NSAttributedStringKey.font:UIFont.systemFont(ofSize: 17)]
+//        navigationBar.backIndicatorImage =
+//        navigationBar.backIndicatorTransitionMaskImage =
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 16)], for: .normal)
+
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
