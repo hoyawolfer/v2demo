@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.5.1)
   - Differentiator (3.0.0-rc.0)
   - Kanna (2.2.1)
+  - Kingfisher (4.1.0)
   - Moya (9.0.0):
     - Moya/Core (= 9.0.0)
   - Moya/Core (9.0.0):
@@ -19,6 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - Kanna
+  - Kingfisher (~> 4.1.0)
   - Moya (~> 9.0.0)
   - RxCocoa (~> 4.0.0-rc.0)
   - RxDataSources (~> 3.0.0-rc.0)
@@ -29,6 +31,7 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Differentiator: 1e7575c5613fc4e72659d9d2d0867ff5bc4dbac5
   Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
+  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
   Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxCocoa: 62457355be73369670fbdf053a79a491552b64ed
@@ -36,6 +39,6 @@ SPEC CHECKSUMS:
   RxSwift: 1dd09ceb11531c39adff4efe23556b1484e16967
   SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
 
-PODFILE CHECKSUM: f1e4bcf48105356042f8205ec2aeb8119f5447aa
+PODFILE CHECKSUM: 62ffd05fca34c38752eb43cfa0fcb7b99c7affd2
 
 COCOAPODS: 1.2.1

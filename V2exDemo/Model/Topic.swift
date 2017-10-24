@@ -8,6 +8,13 @@
 
 import Foundation
 
+enum TapLink {
+    case user(info:User)
+    case node(info:Node)
+    case image(src:String)
+    case web(url:URL)
+}
+
 struct User {
     var name:String = ""
     var href:String = ""
@@ -17,6 +24,24 @@ struct User {
         self.name = name
         self.href = href
         self.src = src
+    }
+}
+
+extension User {
+    enum Avatar:String {
+        case normal = "_normal.", mini = "_mini.", large = "_large."
+    }
+
+    var srcURLString:String {
+        return "https:" + src
+    }
+
+    func avatar(_ type:Avatar) -> String {
+        let arr = ["_normal.", "_mini.", "_large."]
+        if let index = arr.index(where: {srcURLString.hasSuffix($0)}) {
+            return srcURLString.replacingOccurrences(of: arr[index], with: type.rawValue)
+        }
+        return srcURLString
     }
 }
 

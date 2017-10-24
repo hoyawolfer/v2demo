@@ -16,7 +16,7 @@ class HomeViewModel {
     let defaultNodes = Variable<[Node]>([])
 
     var nodesNavigation:[(name:String, content:String)] = []
-    let loadingActivityIndicator = ActivityIndicator()
+//    let loadingActivityIndicator = ActivityIndicator()
 
     var nodeHerf:String = ""
     private let dispostBag = DisposeBag()
