@@ -11,7 +11,7 @@ import Kingfisher
 import RxCocoa
 import RxSwift
 
-class ProfileHeaderView: UIView {
+class ProfileHeaderView: UIView, ThemeUpdating {
 
     @IBOutlet weak var avatarBtn: UIButton!
     @IBOutlet weak var nameLab:UILabel!
@@ -56,8 +56,16 @@ class ProfileHeaderView: UIView {
 }
 
 extension Reactive where Base:ProfileHeaderView {
-    var user:Binder {
+    var user:Binder<User> {
+        return Binder.init(self.base, binding: {view, value in
+            view.user = value
+        })
+    }
 
+    var isLoginEnabled:Binder<Bool> {
+        return Binder.init(self.base, binding: {view, value in
+            view.avatarBtn.isUserInteractionEnabled = value
+        })
     }
 }
 

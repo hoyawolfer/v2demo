@@ -84,11 +84,11 @@
             </objects>
             <point key="canvasLocation" x="-697" y="-19"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="xYF-Vm-gFz">
             <objects>
-                <tableViewController id="kay-L4-PXc" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ILj-x7-3QG">
+                <tableViewController id="kay-L4-PXc" customClass="ProfileViewController" customModule="V2exDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="ILj-x7-3QG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,13 +127,52 @@
                             </connections>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nwp-hq-o36">
-                                <rect key="frame" x="0.0" y="248" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nwp-hq-o36" customClass="ProfileMenuViewCell" customModule="V2exDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="248" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nwp-hq-o36" id="eiv-OR-6V4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  0  " textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th9-qo-o8I">
+                                            <rect key="frame" x="126" y="21" width="21.5" height="18"/>
+                                            <color key="backgroundColor" red="0.92549020049999997" green="0.23529411850000001" blue="0.1019607857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="FmY-Jx-oFy"/>
+                                                <constraint firstAttribute="height" constant="18" id="JUy-yn-LfK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RID-OC-9BN">
+                                            <rect key="frame" x="75" y="21" width="31" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slide_menu_favorite" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-2A-qq3">
+                                            <rect key="frame" x="30" y="22.5" width="15" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="3G5-eM-1aG"/>
+                                                <constraint firstAttribute="width" constant="15" id="zhz-T4-EUq"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Wjf-2A-qq3" firstAttribute="centerY" secondItem="eiv-OR-6V4" secondAttribute="centerY" id="6qG-Fe-i3D"/>
+                                        <constraint firstItem="RID-OC-9BN" firstAttribute="centerY" secondItem="eiv-OR-6V4" secondAttribute="centerY" id="EQG-RI-y27"/>
+                                        <constraint firstItem="Th9-qo-o8I" firstAttribute="centerY" secondItem="RID-OC-9BN" secondAttribute="centerY" id="HjM-cU-HTl"/>
+                                        <constraint firstItem="Th9-qo-o8I" firstAttribute="leading" secondItem="RID-OC-9BN" secondAttribute="trailing" constant="20" id="eeB-P6-X5N"/>
+                                        <constraint firstItem="RID-OC-9BN" firstAttribute="leading" secondItem="Wjf-2A-qq3" secondAttribute="trailing" constant="30" id="j80-8f-4iu"/>
+                                        <constraint firstItem="Wjf-2A-qq3" firstAttribute="leading" secondItem="eiv-OR-6V4" secondAttribute="leading" constant="30" id="yXW-dP-6R0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconImg" destination="Wjf-2A-qq3" id="ZYN-JJ-29c"/>
+                                    <outlet property="nameLab" destination="RID-OC-9BN" id="Ybl-0D-vjk"/>
+                                    <outlet property="unreadLab" destination="Th9-qo-o8I" id="R9a-KY-Hbi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -142,10 +181,16 @@
                             <outlet property="delegate" destination="kay-L4-PXc" id="DrY-DT-lZG"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="headerView" destination="yHZ-67-DN6" id="yMO-mI-6eF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0m-PI-8SX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1394" y="775"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="slide_menu_favorite" width="15" height="15"/>
+    </resources>
 </document>
