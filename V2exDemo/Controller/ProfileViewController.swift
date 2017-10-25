@@ -100,9 +100,24 @@ class ProfileViewController: UITableViewController {
                 Account.shared.isDailyRewards.value = false
             }
         }).disposed(by: disposeBag)
-
+        
+        
+        
     }
 
+    @IBAction func loginButtonAction(_ sender: Any) {
+        
+        if let nav = navController, Account.shared.isLoggedIn.value {
+            drawerViewController?.isOpenDrawer = false
+            
+        } else {
+            showLoginlert()
+        }
+    }
+    
+    func showLoginView() {
+        drawerViewController?.performSegue(withIdentifier: "", sender: nil)
+    }
 }
 
 
