@@ -129,6 +129,55 @@
                                 <outlet property="nameLab" destination="ftp-VG-ebf" id="TYz-Pf-1Z8"/>
                             </connections>
                         </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileMenuViewCell" id="IFB-O9-dca" customClass="ProfileMenuViewCell" customModule="V2exDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="248" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IFB-O9-dca" id="PNK-PN-9h0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  0  " textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUg-a0-C6f">
+                                            <rect key="frame" x="126" y="21" width="21.5" height="18"/>
+                                            <color key="backgroundColor" red="0.92549020049999997" green="0.23529411850000001" blue="0.1019607857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="GXk-5z-qFe"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="gzf-GS-1Ji"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sri-Zc-hFV">
+                                            <rect key="frame" x="75" y="21" width="31" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slide_menu_favorite" translatesAutoresizingMaskIntoConstraints="NO" id="9GC-64-LDV">
+                                            <rect key="frame" x="30" y="23" width="15" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="15" id="9eD-B4-ntd"/>
+                                                <constraint firstAttribute="height" constant="15" id="EzT-vb-Vpp"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9GC-64-LDV" firstAttribute="centerY" secondItem="PNK-PN-9h0" secondAttribute="centerY" id="3df-gp-ZOg"/>
+                                        <constraint firstItem="tUg-a0-C6f" firstAttribute="centerY" secondItem="sri-Zc-hFV" secondAttribute="centerY" id="6XI-9I-etj"/>
+                                        <constraint firstItem="sri-Zc-hFV" firstAttribute="centerY" secondItem="PNK-PN-9h0" secondAttribute="centerY" id="LnM-aS-CKe"/>
+                                        <constraint firstItem="sri-Zc-hFV" firstAttribute="leading" secondItem="9GC-64-LDV" secondAttribute="trailing" constant="30" id="QSC-Ka-v6L"/>
+                                        <constraint firstItem="9GC-64-LDV" firstAttribute="leading" secondItem="PNK-PN-9h0" secondAttribute="leading" constant="30" id="QwH-hM-itY"/>
+                                        <constraint firstItem="tUg-a0-C6f" firstAttribute="leading" secondItem="sri-Zc-hFV" secondAttribute="trailing" constant="20" id="vIA-oH-rGT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconImg" destination="9GC-64-LDV" id="yfq-33-YeK"/>
+                                    <outlet property="nameLab" destination="sri-Zc-hFV" id="zHB-E8-fCQ"/>
+                                    <outlet property="unreadLab" destination="tUg-a0-C6f" id="snP-WS-hfm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="kay-L4-PXc" id="qPk-xa-TOv"/>
@@ -144,4 +193,7 @@
             <point key="canvasLocation" x="-1394" y="775"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="slide_menu_favorite" width="15" height="15"/>
+    </resources>
 </document>

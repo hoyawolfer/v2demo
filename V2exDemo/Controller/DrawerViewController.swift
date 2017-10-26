@@ -61,7 +61,7 @@ class DrawerViewController: UIViewController {
             return
         }
 
-//        performSegue(withIdentifier: "left", sender: self)
+        performSegue(withIdentifier: "left", sender: self)
         performSegue(withIdentifier: "center", sender: self)
     }
 
@@ -154,7 +154,15 @@ class DrawerViewController: UIViewController {
             view.addSubview(segue.destination.view)
             segue.destination.didMove(toParentViewController: self)
 
-            if segue.destination is UINavigationController {
+            if segue.destination is ProfileViewController {
+                let controller = segue.destination as! ProfileViewController
+                var rect = controller.view.frame
+                rect.origin.x = -leftDrawerWidth
+                rect.size.width = leftDrawerWidth
+                controller.view.frame = rect
+
+                leftViewController = controller
+            } else if segue.destination is UINavigationController {
                 centerViewController = segue.destination
                 (centerViewController as! UINavigationController).delegate = self
                 centerOverlayView = UIView()
@@ -202,7 +210,7 @@ extension UIViewController {
     var drawerViewController:DrawerViewController? {
         var drawer = parent
         while drawer != nil {
-            if let drawer = drawer as! DrawerViewController? {
+            if let drawer = drawer as? DrawerViewController? {
                 return drawer
             }
             drawer = parent?.parent

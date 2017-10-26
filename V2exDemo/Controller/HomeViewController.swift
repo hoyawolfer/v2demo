@@ -68,9 +68,10 @@ class HomeViewController:UITableViewController {
 
     @IBAction func leftBarItemAction(_ sender: UIBarButtonItem) {
         self.presentationController?.presentedViewController.dismiss(animated: true, completion: nil)
-//        guard let drawerViewController =  else {
-//            <#statements#>
-//        }
+        guard let drawerViewController = drawerViewController else {
+            return
+        }
+        drawerViewController.isOpenDrawer = !drawerViewController.isOpenDrawer
     }
 
     func linkTapAction(type:TapLink) {

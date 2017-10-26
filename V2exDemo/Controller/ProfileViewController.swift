@@ -37,7 +37,7 @@ class ProfileViewController: UITableViewController {
             }
         }).disposed(by: disposeBag)
 
-        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        tableView.delegate = nil
         tableView.dataSource = nil
 
         Account.shared.user.asObservable().bind(onNext: {user in
@@ -65,7 +65,7 @@ class ProfileViewController: UITableViewController {
             }
 
             guard Account.shared.isLoggedIn.value else {
-                self.showLoginlert()
+                self.showLoginView()
                 return
             }
 
@@ -111,7 +111,7 @@ class ProfileViewController: UITableViewController {
             drawerViewController?.isOpenDrawer = false
             
         } else {
-            showLoginlert()
+            showLoginView()
         }
     }
     
