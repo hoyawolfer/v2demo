@@ -10,4 +10,8 @@ target 'V2exDemo' do
     pod 'RxCocoa', '~> 4.0'
     pod 'RxDataSources', '~> 3.0'
     pod 'Kingfisher', '~> 4.1.0'
+    pod 'PKHUD'
+    pod '1PasswordExtension'
+    pod 'MonkeyKing'
+    pod 'SKPhotoBrowser'
 end

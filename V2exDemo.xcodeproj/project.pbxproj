@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		05897573A848DB20698919EC /* Pods_V2exDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66480DDBEC3DDA2C462E3B5C /* Pods_V2exDemo.framework */; };
+		1B1690931FA442BA00CF0386 /* TopicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1690921FA442BA00CF0386 /* TopicDetailsViewController.swift */; };
+		1B1690951FA4552600CF0386 /* TopicDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1690941FA4552600CF0386 /* TopicDetailsViewModel.swift */; };
+		1B1690971FA455BA00CF0386 /* TopicDetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1690961FA455BA00CF0386 /* TopicDetailsSection.swift */; };
 		B02FB5541F99D2920022BC1B /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FB5531F99D2920022BC1B /* DrawerViewController.swift */; };
 		B02FB5561F9DCA270022BC1B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FB5551F9DCA270022BC1B /* ProfileViewController.swift */; };
 		B02FB5581F9DD2490022BC1B /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FB5571F9DD2490022BC1B /* ProfileHeaderView.swift */; };
@@ -60,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B1690921FA442BA00CF0386 /* TopicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailsViewController.swift; sourceTree = "<group>"; };
+		1B1690941FA4552600CF0386 /* TopicDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailsViewModel.swift; sourceTree = "<group>"; };
+		1B1690961FA455BA00CF0386 /* TopicDetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailsSection.swift; sourceTree = "<group>"; };
 		66480DDBEC3DDA2C462E3B5C /* Pods_V2exDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_V2exDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02FB5531F99D2920022BC1B /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		B02FB5551F9DCA270022BC1B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +232,7 @@
 		B0AB45FF1F7F4A7A00CF7E97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B1690961FA455BA00CF0386 /* TopicDetailsSection.swift */,
 				B0FB82E31F945F0100C87B51 /* Account.swift */,
 				B0FB82E51F948ADD00C87B51 /* Error.swift */,
 				B0AB46151F7F93C500CF7E97 /* TopicListSection.swift */,
@@ -238,6 +245,7 @@
 		B0AB46001F7F4A7A00CF7E97 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1B1690941FA4552600CF0386 /* TopicDetailsViewModel.swift */,
 				B0AB46131F7F924E00CF7E97 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
@@ -250,6 +258,7 @@
 				B0FB82EB1F95DDE100C87B51 /* HomeViewController.swift */,
 				B02FB5531F99D2920022BC1B /* DrawerViewController.swift */,
 				B02FB5551F9DCA270022BC1B /* ProfileViewController.swift */,
+				1B1690921FA442BA00CF0386 /* TopicDetailsViewController.swift */,
 				B0AB46031F7F4A7A00CF7E97 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -437,7 +446,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		74416ED85DBDC4C5F133BD29 /* [CP] Embed Pods Frameworks */ = {
@@ -447,26 +456,36 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-V2exDemo/Pods-V2exDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/1PasswordExtension/OnePasswordExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MonkeyKing/MonkeyKing.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OnePasswordExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MonkeyKing.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,10 +517,12 @@
 			files = (
 				B0FB82FA1F9849DB00C87B51 /* TopicViewCell.swift in Sources */,
 				B0FB82E01F8CA82700C87B51 /* HTMLParser.swift in Sources */,
+				1B1690931FA442BA00CF0386 /* TopicDetailsViewController.swift in Sources */,
 				B0FB82E41F945F0100C87B51 /* Account.swift in Sources */,
 				B02FB55B1F9DD31C0022BC1B /* UITableViewController.swift in Sources */,
 				B0FB82F81F96F5D000C87B51 /* ActivityIndicator.swift in Sources */,
 				B0FB82E21F8CA83100C87B51 /* Topic.swift in Sources */,
+				1B1690951FA4552600CF0386 /* TopicDetailsViewModel.swift in Sources */,
 				B02FB5541F99D2920022BC1B /* DrawerViewController.swift in Sources */,
 				B02FB5561F9DCA270022BC1B /* ProfileViewController.swift in Sources */,
 				B0AB460E1F7F7FCF00CF7E97 /* Observable+Response.swift in Sources */,
@@ -512,6 +533,7 @@
 				B0AB46091F7F6A2C00CF7E97 /* API.swift in Sources */,
 				B02FB5581F9DD2490022BC1B /* ProfileHeaderView.swift in Sources */,
 				B0AB46141F7F924E00CF7E97 /* HomeViewModel.swift in Sources */,
+				1B1690971FA455BA00CF0386 /* TopicDetailsSection.swift in Sources */,
 				B0AB46161F7F93C500CF7E97 /* TopicListSection.swift in Sources */,
 				B0AB46121F7F861A00CF7E97 /* Single+Response.swift in Sources */,
 				B0FB82E81F94B8F100C87B51 /* Comment.swift in Sources */,
