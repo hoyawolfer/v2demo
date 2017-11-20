@@ -24,6 +24,8 @@ enum API {
     case topics(nodeHerf:String)
 
     case dailyRewards(once:String)
+    
+    case pageList(href:String, page:Int)
 }
 
 extension API:TargetType {
@@ -56,6 +58,7 @@ extension API:TargetType {
             return "/signin"
         case .login(userNameKey: _, passwordKey: _, userName: _, password: _, once: _):
             return "signin"
+        case let .page
         default:
             return ""
         }
