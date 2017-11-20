@@ -40,6 +40,8 @@ class ProfileViewController: UITableViewController {
         tableView.delegate = nil
         tableView.dataSource = nil
 
+        tableView.tableFooterView = UIView()
+
         Account.shared.user.asObservable().bind(onNext: {user in
             self.headerView.user = user
         }).disposed(by: disposeBag)
