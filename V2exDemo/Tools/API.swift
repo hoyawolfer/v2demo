@@ -10,7 +10,19 @@ import Foundation
 import Moya
 
 enum PrivicyType {
+    case online(value:Int)
+    case topic(value:Int)
+    case search(on:Bool)
+}
 
+enum ThankType {
+    case topic(id:String)
+    case reply(id:String)
+}
+
+enum FavoriteType {
+    case topic(id:String, token:String)
+    case node(id:String, once:String)
 }
 
 enum API {
@@ -22,10 +34,16 @@ enum API {
     case logout(once:String)
     // Topics
     case topics(nodeHerf:String)
-
+    //每日奖励
     case dailyRewards(once:String)
-    
+    //分页列表数据
     case pageList(href:String, page:Int)
+    //评论回复
+    case comment(topicHref: String, content: String, once: String)
+    //感谢
+    case thank(type:ThankType, once:String)
+    //节点收藏
+    case favorite(type:FavoriteType, isCancel:Bool)
 }
 
 extension API:TargetType {
@@ -58,7 +76,18 @@ extension API:TargetType {
             return "/signin"
         case .login(userNameKey: _, passwordKey: _, userName: _, password: _, once: _):
             return "signin"
-        case let .page
+        case let .pageList(href, _), let .comment(href, _, _):
+            if href.contains("#") {
+                return href.components(separatedBy: "#").first ?? ""
+            }
+            return href
+        case let .thank(type, _)
+            switch type {
+            case let .topic(id):
+                return "/thank/topic/\(id)"
+            case let .reply(id):
+                return "/thank/reply/\(id)"
+            }
         default:
             return ""
         }
@@ -89,6 +118,8 @@ extension API:TargetType {
             }
             let node = nodeHerf.replacingOccurrences(of: "/?tab=", with: "")
             return ["tab":node]
+        case let .thank(_, token):
+            return ["t":token]
         default:
             return nil
         }
@@ -97,6 +128,16 @@ extension API:TargetType {
     /// The type of HTTP task to be performed.
     var task: Task {
         switch self {
+        case let .login(userNameKey, passwordKey, userName, password, once):
+            return .requestParameters(parameters: [userNameKey:userName,passwordKey:password,"once":once, "next":"/"], encoding: JSONEncoding.default)
+        case let .topics(nodeHref):
+            if nodeHref.isEmpty {
+                return nil
+            }
+            let node = nodeHref.replacingOccurrences(of: "/?tab=", with: "")
+            return ["tab":node]
+        case let .pageList(_, page):
+            return page == 0 ? nil : ["p":page]
         default:
             return .requestPlain
         }

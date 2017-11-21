@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'V2exDemo' do	
 	pod 'RxSwift', '~> 4.0'
-	pod 'Moya', '~> 9.0.0'
+	pod 'Moya'
 	pod 'SVProgressHUD'
     pod 'Kanna'
     pod 'RxCocoa', '~> 4.0'
