@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 import RxDataSources
-import SKPhotoBrowser
+//import SKPhotoBrowser
 import PKHUD
 import MonkeyKing
 
@@ -57,7 +57,27 @@ class TopicDetailsViewController: UITableViewController {
 
         guard let viewModel = viewModel else { return }
 
-        headerView.topic = v
+        headerView.topic = viewModel.topic
+        headerView.linkTap = { [weak self] type in
+//            self.link
+        }
+        header
+    }
+
+    func linkTapAction(type: TapLink) {
+        guard let nav = navigationController else { return }
+        switch type {
+//        case let .user(info):
+//            Timeli
+        case let .image(src):
+            AppSetting.openPhotoBrowser(from: nav, src: src)
+        case let .web(info):
+            AppSetting.openWebBrowser(from: nav, URL: url)
+//        case let .node(info):
+//            NodeTop
+        default:
+
+        }
     }
 }
 

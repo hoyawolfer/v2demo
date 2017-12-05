@@ -17,6 +17,11 @@
 		B02FB55B1F9DD31C0022BC1B /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02FB55A1F9DD31C0022BC1B /* UITableViewController.swift */; };
 		B03E05AF1FA08ECD007E9FEF /* ProfileMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E05AE1FA08ECD007E9FEF /* ProfileMenuViewCell.swift */; };
 		B03E05B11FA09166007E9FEF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03E05B01FA09166007E9FEF /* UIImage.swift */; };
+		B045D8381FD54A490057A064 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B045D8371FD54A490057A064 /* AppSetting.swift */; };
+		B05EDA291FC50A4100284821 /* TopicDetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EDA281FC50A4100284821 /* TopicDetailsHeaderView.swift */; };
+		B05EDA2B1FC5253C00284821 /* LoadMoreCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EDA2A1FC5253C00284821 /* LoadMoreCommentCell.swift */; };
+		B05EDA2D1FC5254D00284821 /* TopicDetailsCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EDA2C1FC5254D00284821 /* TopicDetailsCommentCell.swift */; };
+		B05EDA2F1FC5688900284821 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EDA2E1FC5688900284821 /* String.swift */; };
 		B0AB45D61F7F461D00CF7E97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AB45D41F7F461D00CF7E97 /* Main.storyboard */; };
 		B0AB45D81F7F461D00CF7E97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0AB45D71F7F461D00CF7E97 /* Assets.xcassets */; };
 		B0AB45DB1F7F461D00CF7E97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AB45D91F7F461D00CF7E97 /* LaunchScreen.storyboard */; };
@@ -73,6 +78,11 @@
 		B02FB55A1F9DD31C0022BC1B /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
 		B03E05AE1FA08ECD007E9FEF /* ProfileMenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewCell.swift; sourceTree = "<group>"; };
 		B03E05B01FA09166007E9FEF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		B045D8371FD54A490057A064 /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
+		B05EDA281FC50A4100284821 /* TopicDetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailsHeaderView.swift; sourceTree = "<group>"; };
+		B05EDA2A1FC5253C00284821 /* LoadMoreCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreCommentCell.swift; sourceTree = "<group>"; };
+		B05EDA2C1FC5254D00284821 /* TopicDetailsCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailsCommentCell.swift; sourceTree = "<group>"; };
+		B05EDA2E1FC5688900284821 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B0AB45CD1F7F461C00CF7E97 /* V2exDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V2exDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AB45D51F7F461D00CF7E97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0AB45D71F7F461D00CF7E97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,9 +232,12 @@
 		B0AB45FE1F7F4A7900CF7E97 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B05EDA281FC50A4100284821 /* TopicDetailsHeaderView.swift */,
 				B0FB82F91F9849DB00C87B51 /* TopicViewCell.swift */,
 				B02FB5571F9DD2490022BC1B /* ProfileHeaderView.swift */,
 				B03E05AE1FA08ECD007E9FEF /* ProfileMenuViewCell.swift */,
+				B05EDA2A1FC5253C00284821 /* LoadMoreCommentCell.swift */,
+				B05EDA2C1FC5254D00284821 /* TopicDetailsCommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +295,8 @@
 				B0FB82F31F96061100C87B51 /* Theme.swift */,
 				B0FB82F51F96066C00C87B51 /* AppStyle.swift */,
 				B0FB82F71F96F5CF00C87B51 /* ActivityIndicator.swift */,
+				B05EDA2E1FC5688900284821 /* String.swift */,
+				B045D8371FD54A490057A064 /* AppSetting.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -525,12 +540,15 @@
 				1B1690951FA4552600CF0386 /* TopicDetailsViewModel.swift in Sources */,
 				B02FB5541F99D2920022BC1B /* DrawerViewController.swift in Sources */,
 				B02FB5561F9DCA270022BC1B /* ProfileViewController.swift in Sources */,
+				B045D8381FD54A490057A064 /* AppSetting.swift in Sources */,
 				B0AB460E1F7F7FCF00CF7E97 /* Observable+Response.swift in Sources */,
 				B0AB46181F7F93D000CF7E97 /* Node.swift in Sources */,
+				B05EDA2F1FC5688900284821 /* String.swift in Sources */,
 				B0AB46051F7F4A7B00CF7E97 /* ViewController.swift in Sources */,
 				B03E05B11FA09166007E9FEF /* UIImage.swift in Sources */,
 				B03E05AF1FA08ECD007E9FEF /* ProfileMenuViewCell.swift in Sources */,
 				B0AB46091F7F6A2C00CF7E97 /* API.swift in Sources */,
+				B05EDA2D1FC5254D00284821 /* TopicDetailsCommentCell.swift in Sources */,
 				B02FB5581F9DD2490022BC1B /* ProfileHeaderView.swift in Sources */,
 				B0AB46141F7F924E00CF7E97 /* HomeViewModel.swift in Sources */,
 				1B1690971FA455BA00CF0386 /* TopicDetailsSection.swift in Sources */,
@@ -541,9 +559,11 @@
 				B0AB460C1F7F7F8000CF7E97 /* RxMoyaAvailability.swift in Sources */,
 				B0AB46101F7F858C00CF7E97 /* MoyaProvider+Rx.swift in Sources */,
 				B0FB82E61F948ADD00C87B51 /* Error.swift in Sources */,
+				B05EDA291FC50A4100284821 /* TopicDetailsHeaderView.swift in Sources */,
 				B0FB82F61F96066C00C87B51 /* AppStyle.swift in Sources */,
 				B0AB46041F7F4A7B00CF7E97 /* AppDelegate.swift in Sources */,
 				B0FB82F41F96061100C87B51 /* Theme.swift in Sources */,
+				B05EDA2B1FC5253C00284821 /* LoadMoreCommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
